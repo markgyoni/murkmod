@@ -161,7 +161,7 @@ murkmod() {
             echo "Found a $VERSION match on platform $platform from $last_modified."
             MATCH_FOUND=1
             #https://dl.google.com/dl/edgedl/chromeos/recovery/chromeos_15117.112.0_hatch_recovery_stable-channel_mp-v6.bin.zip
-            FINAL_URL="https://dl.google.com/dl/edgedl/chromeos/recovery/chromeos_${platform}_${board}_recovery_${channel}_${mp_token}-v${mp_key}.bin.zip"
+            # FINAL_URL="https://dl.google.com/dl/edgedl/chromeos/recovery/chromeos_${platform}_${board}_recovery_${channel}_${mp_token}-v${mp_key}.bin.zip"
             break
         fi
     done
@@ -186,6 +186,9 @@ murkmod() {
             fi
         done
     fi
+    
+    MATCH_FOUND=1
+    FINAL_URL="https://dl.google.com/dl/edgedl/chromeos/recovery/chromeos_16002.60.0_octopus_recovery_stable-channel_mp-v35.bin.zip"
 
     if [ $MATCH_FOUND -eq 0 ]; then
         echo "No recovery image found for your board and target version. Exiting."
